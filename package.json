@@ -1,0 +1,38 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "akhilmhdh blog",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p dev:*",
+    "prestart": "rimraf ./dist",
+    "dev:server": "eleventy --serve",
+    "dev:tw": "npx tailwindcss -i src/css/global.css -o dist/css/global.css --watch",
+    "build": "eleventy && pnpm run tw:build",
+    "tw:build": "npx tailwindcss -i src/css/global.css -o dist/css/global.css --minify"
+  },
+  "keywords": [],
+  "author": {
+    "email": "akhilmhdh@gmail.com",
+    "name": "Akhil Mohan",
+    "url": "https://akhilmhdh.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "@types/markdown-it": "^12.2.3",
+    "autoprefixer": "^10.4.8",
+    "clean-css": "^5.3.1",
+    "dayjs": "^1.11.4",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^3.1.8",
+    "terser": "^5.14.2"
+  }
+}

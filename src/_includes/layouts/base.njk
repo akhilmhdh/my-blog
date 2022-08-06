@@ -8,14 +8,14 @@
     <title>{{ title }}</title>
 </head>
 
-<body>
-    <main>
-        <header>
-            {% include "partials/nav.njk" %}
-        </header>
+<body class="h-screen m-0 px-4 pt-6 flex flex-col">
+    <header>
+        {% include "partials/nav.njk" %}
+    </header>
+    <main class="flex-grow">
         {{ content | safe }}
-        {% include "partials/footer.njk" %}
     </main>
+    {% include "partials/footer.njk" %}
 </body>
 
 </html>

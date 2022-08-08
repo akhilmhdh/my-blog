@@ -5,7 +5,7 @@ layout: layouts/base.njk
 {% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon %}
 {% from "components/blogPost.njk" import blogPost %}
 
-<div class="w-full pt-4 flex flex-col gap-8">
+<section class="w-full pt-4 flex flex-col gap-8">
     <div class="flex gap-6 items-center">
         <div>
             <img src="https://github.com/akhilmhdh.png" alt="avatar" class="w-32 h-32 rounded-md" /> 
@@ -37,37 +37,28 @@ layout: layouts/base.njk
             my thoughts and insights on things I have learned in technology, product building, and life.
         </p>
     </div>
-    <div class="flex flex-col mb-4">
-        <div class="py-4 border-b border-grey-lighter mb-4">
-            <h3>
-                Most Recent Posts
-            </h3>
-        </div>
-        <div class="grid grid-cols-4 gap-4">
-            <div class="col-span-4">
-                {{blogPost(
-                "Effective React",
-                "Something on React",
-                "react",
-                "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F1i5P2Iq4omhSnzajCWjsxd%2F9f613f5b011bcc6ebd0ddfc0198d7849%2Fthe-supportive-7.png?ixlib=gatsbySourceUrl-2.0.2&auto=format%2C%20compress&w=814&h=458&s=42204952307dfede0c5d040d83943917"
-            )}}
-            </div>
-            <div class="col-span-2">
-                {{blogPost(
-                "Effective React",
-                "Something on React",
-                "react",
-                "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F1i5P2Iq4omhSnzajCWjsxd%2F9f613f5b011bcc6ebd0ddfc0198d7849%2Fthe-supportive-7.png?ixlib=gatsbySourceUrl-2.0.2&auto=format%2C%20compress&w=814&h=458&s=42204952307dfede0c5d040d83943917"
-            )}}
-            </div>
-            <div class="col-span-2">
-                {{blogPost(
-                "Effective React",
-                "Something on React",
-                "react",
-                "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F1i5P2Iq4omhSnzajCWjsxd%2F9f613f5b011bcc6ebd0ddfc0198d7849%2Fthe-supportive-7.png?ixlib=gatsbySourceUrl-2.0.2&auto=format%2C%20compress&w=814&h=458&s=42204952307dfede0c5d040d83943917"
-            )}}
-            </div>
+</section>
+<section class="w-full flex flex-col mt-8 mb-12">
+    <div class="py-4 border-b border-grey-lighter mb-4">
+        <h3>
+            Most Recent Posts
+        </h3>
+    </div>
+    <div class="grid grid-cols-3 gap-8">
+        {%- for blog in collections.blogs -%}
+            {% if (loop.index <= 5) %}
+                <div style="{{ "grid-area:auto / auto / span 2 / span 2;" if loop.first }}">
+                    {{
+                        blogPost({
+                            title: blog.data.title,
+                            description: blog.data.description,
+                            category: blog.data.tags[0],
+                            img: blog.data.cover
+                        }) 
+                    }}
+                </div>
+            {% endif %}
+        {%- endfor -%}
         </div>
     </div>
-</div>
+</section>

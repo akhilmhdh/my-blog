@@ -5,40 +5,46 @@ layout: layouts/base.njk
 {% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon, chevronRightIcon %}
 {% from "components/blogPost.njk" import blogPost %}
 
-<section class="w-full pt-4 flex flex-col gap-8">
-    <div class="flex gap-6 items-center">
-        <div>
-            <img src="https://github.com/akhilmhdh.png" alt="avatar" class="w-32 h-32 rounded-md" /> 
-        </div>
-        <div class="flex flex-col">
-            <h1 class="mb-5">
-                Hi, I'm Akhil
-            </h1>
-            <div class="flex gap-4">
-                 <a href="/" class="hover:text-primary transition-all">
-                    {{ghIcon(24,24)}}
-                </a>
-                <a href="/" class="hover:text-primary transition-all">
-                    {{linkedinIcon(24,24)}}
-                </a>
-                <a href="/" class="hover:text-primary transition-all">
-                    {{twitterIcon(24,24)}}
-                </a>
+<section class="bg-cream -mx-4">
+    <div class="w-full pt-12 p-4 flex flex-col gap-8 mx-auto max-w-5xl animate-fade-in-down">
+        <div class="flex gap-6 items-center">
+            <div>
+                <img src="https://github.com/akhilmhdh.png" alt="avatar" class="w-32 h-32 rounded-md" /> 
+            </div>
+            <div class="flex flex-col">
+                <h1 class="mb-5">
+                    Hi, I'm Akhil
+                </h1>
+                <div class="flex gap-4">
+                    <a href="/" class="hover:text-primary transition-all">
+                        {{ghIcon(24,24)}}
+                    </a>
+                    <a href="/" class="hover:text-primary transition-all">
+                        {{linkedinIcon(24,24)}}
+                    </a>
+                    <a href="/" class="hover:text-primary transition-all">
+                        {{twitterIcon(24,24)}}
+                    </a>
+                </div>
             </div>
         </div>
+        <div class="flex flex-col gap-4 max-w-xl  bg-secondary rounded-lg p-8 shadow-md">
+            <p>
+                I'm a software engineer at Red Hat, who loves to solve problems and build solutions.
+            </p>
+            <p>
+            Right now on a journey to discover various aspects of myself and push myself into new domains.
+                Here I share
+                my thoughts and insights on things I have learned in technology, product building, and life.
+            </p>
+        </div>
     </div>
-    <div class="flex flex-col gap-4 max-w-xl bg-secondary rounded-lg p-8 shadow-md">
-        <p>
-            I'm a software engineer at Red Hat, who loves to solve problems and build solutions.
-        </p>
-        <p>
-           Right now on a journey to discover various aspects of myself and push myself into new domains.
-            Here I share
-            my thoughts and insights on things I have learned in technology, product building, and life.
-        </p>
+    <div>
+        {# Credits for wave: https://getwaves.io/ #}
+        <svg class="wave" preserveAspectRatio="none" class="h-32 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,170.7C480,192,600,192,720,176C840,160,960,128,1080,128C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" style="--darkreader-inline-fill: #fff;" data-darkreader-inline-fill=""></path></svg>
     </div>
 </section>
-<section class="w-full flex flex-col mt-8 mb-12">
+<section class="w-full flex flex-col mb-12 mx-auto max-w-5xl">
     <div class="flex justify-between items-center py-4 border-b border-grey-lighter mb-8">
         <div>
             <h3>

@@ -1,7 +1,7 @@
 {% from "components/icons.njk" import logo %}
 
-<nav class="flex justify-between items-center mx-auto max-w-5xl font-lato mb-6">
-    <div>
+<nav class="flex justify-between items-center mx-auto max-w-5xl font-lato pt-2">
+    <div class="pb-4">
         <a href="/">
             {{
                 logo(28)
@@ -9,13 +9,13 @@
         </a>
     </div>
     <div class="flex gap-6 items-center">
-        <a href="/" class="border-b-2 border-transparent hover:border-primary transition-all py-2 {{ "border-primary" if page.url === "/" }}">
+        <a href="/" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
             Home
         </a>
-        <a href="/blogs" class="border-b-2 border-transparent hover:border-primary transition-all py-2 {{ "border-primary" if page.url.includes("/blogs") }}">
+        <a href="/blogs" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url.includes("/blogs") }}">
             Blogs
         </a>
-        <a href="/blogs" class="border-b-2 border-transparent hover:border-primary transition-all py-2 {{ "border-primary" if page.url === "/reads" }}">
+        <a href="/blogs" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
             My Reads
         </a>
     </div>

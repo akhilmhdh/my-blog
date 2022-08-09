@@ -7,6 +7,11 @@
 @layer base {
     html {
         font-family: "Merriweather", serif;
+        @apply text-gray-700
+    }
+
+    svg {
+        fill: currentColor;
     }
     
     h1,h2,h3,h4,h5,h6 {
@@ -27,5 +32,25 @@
 
     h5 {
         @apply text-xl font-bold
+    }
+
+    h6 {
+        @apply text-lg font-bold
+    }   
+}
+
+@layer components {
+    .zoom-card-animation {
+       overflow: hidden;
+    }
+
+    .zoom-card-animation img {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 250ms;
+    }
+
+    .zoom-card-animation:hover img {
+        transform: scale(1.1);
     }
 }

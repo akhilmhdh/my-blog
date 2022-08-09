@@ -1,24 +1,26 @@
-{% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon %}
+{% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon,logo %}
 
 <footer>
     <div
         class="mx-auto max-w-5xl flex flex-col items-center justify-between border-t border-grey-lighter py-10 sm:flex-row sm:py-12">
         <div class="flex flex-col sm:flex-row font-lato">
             <a href="/">
-                Logo
+                {{logo(28)}}
             </a>
-            <p>
-                ©2021 Akhil Mohan.
+        </div>
+        <div>
+            <p class="font-lato font-bold text-sm text-gray-500">
+                © {{page.date.getFullYear()}} Akhil Mohan.
             </p>
         </div>
         <div class="flex flex-col gap-4 sm:flex-row items-center">
-            <a href="/" class="">
+            <a href="/" class="hover:text-primary transition-all">
                {{ghIcon(32,32)}}
             </a>
-            <a href="/">
+            <a href="/" class="hover:text-primary transition-all">
                 {{linkedinIcon(32,32)}}
             </a>
-            <a href="/">
+            <a href="/" class="hover:text-primary transition-all">
                 {{twitterIcon(32,32)}}
             </a>
         </div>

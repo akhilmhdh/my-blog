@@ -8,6 +8,11 @@ module.exports = {
         lato: ['Lato', 'sans-serif'],
         merriweather: ['Merriweather', 'serif'],
       },
+      colors: {
+        primary: '#FF7E1E',
+        secondary: '#FFCE00',
+        cream: '#F5F2ED',
+      },
     },
   },
   plugins: [],

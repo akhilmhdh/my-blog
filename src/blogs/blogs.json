@@ -1,0 +1,3 @@
+{
+  "permalink": "blogs/{{tags[0]}}/{{title | slugify}}/index.html"
+}

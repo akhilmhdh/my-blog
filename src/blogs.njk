@@ -1,35 +1,29 @@
 ---
 title: My Blogs
 layout: base
-pagination:
-  data: collections.blogs
-  size: 9
-  alias: blogs
 ---
 
 {% from "components/blogPost.njk" import blogPost %}
 
-
 <section class="w-full flex flex-col mb-4">
-    <div class="py-4 border-b border-grey-lighter mb-4">
+    <div class="py-4 border-b border-grey-lighter mb-8">
         <h3>
             My Blogs
         </h3>
     </div>
     <div class="grid grid-cols-6 gap-6">
-        {%- for blog in collections.blogs -%}
-            {% if (loop.index <= 5) %}
-                <div class="col-span-2">
-                    {{
-                        blogPost({
-                            title: blog.data.title,
-                            description: blog.data.description,
-                            category: blog.data.tags[0],
-                            img: blog.data.cover
-                        }) 
-                    }}
-                </div>
-            {% endif %}
+        {%- for blog in collections.blogs | reverse -%}
+            <div class="col-span-2">
+                {{
+                    blogPost({
+                        title: blog.data.title,
+                        description: blog.data.description,
+                        category: blog.data.tags[0],
+                        img: blog.data.cover,
+                        url: blog.url
+                    }) 
+                }}
+            </div>
         {%- endfor -%}
         </div>
     </div>

@@ -2,7 +2,7 @@
 title: Akhi
 layout: layouts/base.njk
 ---
-{% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon %}
+{% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon, chevronRightIcon %}
 {% from "components/blogPost.njk" import blogPost %}
 
 <section class="w-full pt-4 flex flex-col gap-8">
@@ -39,22 +39,36 @@ layout: layouts/base.njk
     </div>
 </section>
 <section class="w-full flex flex-col mt-8 mb-12">
-    <div class="py-4 border-b border-grey-lighter mb-4">
-        <h3>
-            Most Recent Posts
-        </h3>
+    <div class="flex justify-between items-center py-4 border-b border-grey-lighter mb-8">
+        <div>
+            <h3>
+                Most Recent Posts
+            </h3>
+        </div>
+        <a href="/blogs">
+            <div class="flex items-center gap-2">
+                <div class="font-lato">
+                    All my blogs
+                </div>
+                <div>
+                    {{chevronRightIcon(16,16)}}
+                </div>
+            </div>
+        </a>
     </div>
     <div class="grid grid-cols-3 gap-8">
-        {%- for blog in collections.blogs -%}
+        {%- for blog in collections.blogs | reverse -%}
             {% if (loop.index <= 5) %}
+            {{blog.url | log}}
                 <div style="{{ "grid-area:auto / auto / span 2 / span 2;" if loop.first }}">
                     {{
-                        blogPost({
-                            title: blog.data.title,
-                            description: blog.data.description,
-                            category: blog.data.tags[0],
-                            img: blog.data.cover
-                        }) 
+                    blogPost({
+                        title: blog.data.title,
+                        description: blog.data.description,
+                        category: blog.data.tags[0],
+                        img: blog.data.cover,
+                        url: blog.url
+                    }) 
                     }}
                 </div>
             {% endif %}

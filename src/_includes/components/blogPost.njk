@@ -1,13 +1,15 @@
 {% macro blogPost(data) %}
-    <div class="flex flex-col">
-        <div class="w-full">
-            <img src="{{data.img}}" alt="post cover" class="rounded-t-md object-cover h-full w-full" />
+   <a href={{data.url}}>
+        <div class="flex flex-col h-full">
+            <div class="w-full flex-grow">
+                <img src="{{data.img}}" alt="post cover" class="rounded-t-md object-cover h-full w-full" />
+            </div>
+            <div class="py-6 px-4 text-center bg-gray-100 rounded-b-md flex flex-col justify-center">
+                <p class="text-xs uppercase font-bold py-2 opacity-40 font-lato">
+                    {{data.category}}
+                </p>
+                <h5 class="text-gray-500">{{data.title}}</h5>
+            </div>
         </div>
-        <div class="pb-12 pt-8 px-4 text-center bg-gray-100 rounded-b-md">
-            <p class="text-xs uppercase font-bold py-2 opacity-50 font-lato">
-                {{data.category}}
-            </p>
-            <h4>{{data.title}}</h4>
-        </div>
-    </div>
+    </a>
 {% endmacro %} 

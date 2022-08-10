@@ -1,0 +1,130 @@
+p{
+    margin-bottom: 1.5rem;
+}
+
+.direct-link{
+    opacity: 0;
+    display: block;
+    transition: all;
+    transition-duration: 150ms;
+    float: left;
+    margin: 0.75rem 0.25rem 0 -1.5rem;
+}
+
+.direct-link svg {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+h2:hover .direct-link,
+h3:hover .direct-link,  
+h4:hover .direct-link,  
+h5:hover .direct-link,  
+h6:hover .direct-link {
+    opacity: 1;
+}
+
+h2 {
+    margin: 2rem 0 1.5rem;
+}
+
+h3 {
+    margin: 1.5rem 0 1rem;
+}
+
+h4 {
+    margin: 1.2rem 0 .75rem;
+}
+
+h5 {
+    margin: 0.5rem 0 0.5rem;
+}
+
+ol {
+    list-style-type:decimal;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+ol li, ul li {
+    margin-bottom: 0.75rem;
+    line-height: 1.75rem;
+}
+
+table{
+    width: 100%;
+    table-layout: fixed;
+}
+
+th {
+    padding: 0.75rem;
+    font-weight: 700;
+    vertical-align: bottom;
+    background: #F5F2ED;
+    border: 1px solid rgb(229, 231, 235);
+}
+
+td {
+    padding: 0.75rem;
+    border: 1px solid rgb(229, 231, 235);
+    overflow-wrap: break-word;
+    hyphens: manual;
+}
+
+blockquote {
+    background: #F5F2ED;
+    border-left: 10px solid #FF7E1E;
+    margin: 1.5rem 0;
+    padding: 2rem 1rem;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+    color: #FF7E1E;
+    content: open-quote;
+    font-size: 4rem;
+    line-height: 0.1rem;
+    margin-right: 0.1rem;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+details {
+    cursor: pointer;
+    background: #F5F2ED;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+details summary {
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+details :not(summary){
+    margin-left: 1rem;
+}
+
+details[open] summary~* {
+    animation: sweep 150ms ease-in-out;
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

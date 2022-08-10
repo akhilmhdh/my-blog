@@ -1,3 +1,4 @@
 {
-  "permalink": "blogs/{{tags[0]}}/{{title | slugify}}/index.html"
+  "permalink": "blogs/{{tags[0]}}/{{title | slugify}}/index.html",
+  "layout": "layouts/blog"
 }

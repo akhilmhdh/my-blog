@@ -2,6 +2,7 @@ const { minify } = require('terser');
 const CleanCSS = require('clean-css');
 const markdownIt = require('markdown-it');
 const dayjs = require('dayjs');
+const fs = require('fs');
 const markdownItAnchor = require('markdown-it-anchor');
 
 const pluginRss = require('@11ty/eleventy-plugin-rss');
@@ -24,6 +25,55 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+
+  function sentenceCase(sentence) {
+    return (
+      sentence.charAt(0).toUpperCase() + sentence.substring(1).toLowerCase()
+    );
+  }
+
+  eleventyConfig.addShortcode('blogIndex', function () {
+    const mdFile = fs.readFileSync(this.ctx.page.inputPath, 'utf-8');
+    let i = 0;
+    const slugify = eleventyConfig.getFilter('slugify');
+
+    const blogIndexArr = [];
+
+    while (i < mdFile.length - 2) {
+      // find all by matching h2 tag in markdown
+      // ## Title
+      if (mdFile.substring(i, i + 4) === '\n## ') {
+        // start of index will be after the pattern i+4
+        const startOfHeadingIndex = i + 4;
+        let endOfHeadingIndex = i;
+
+        for (start = startOfHeadingIndex; start < mdFile.length; start++) {
+          endOfHeadingIndex = start;
+          if (mdFile[start] === '\n') {
+            i = start;
+            break;
+          }
+        }
+
+        const heading = mdFile.substring(
+          startOfHeadingIndex,
+          endOfHeadingIndex
+        );
+        blogIndexArr.push({
+          title: sentenceCase(heading),
+          slug: slugify(heading),
+        });
+      }
+      i++;
+    }
+
+    return `<ul id="blog-index">${blogIndexArr
+      .map(
+        ({ title, slug }) =>
+          `<li class="hover:text-primary transition-all"><a href="#${slug}">${title}</a></li>`
+      )
+      .join('\n')}</ul>`;
+  });
 
   const markdownLibrary = markdownIt({
     html: true,

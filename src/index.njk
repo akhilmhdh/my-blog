@@ -2,7 +2,7 @@
 title: Akhi
 layout: layouts/base.njk
 ---
-{% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon, chevronRightIcon %}
+{% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon,mailIcon, chevronRightIcon %}
 {% from "components/blogPost.njk" import blogPost %}
 
 <section class="bg-cream -mx-4">
@@ -16,14 +16,17 @@ layout: layouts/base.njk
                     Hi, I'm Akhil
                 </h1>
                 <div class="flex gap-4">
-                    <a href="/" class="hover:text-primary transition-all">
-                        {{ghIcon(24,24)}}
+                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                        {{ghIcon(28,28)}}
                     </a>
-                    <a href="/" class="hover:text-primary transition-all">
-                        {{linkedinIcon(24,24)}}
+                     <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                        {{mailIcon(28,28)}}
                     </a>
-                    <a href="/" class="hover:text-primary transition-all">
-                        {{twitterIcon(24,24)}}
+                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                        {{linkedinIcon(28,28)}}
+                    </a>
+                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                        {{twitterIcon(28,28)}}
                     </a>
                 </div>
             </div>
@@ -65,14 +68,13 @@ layout: layouts/base.njk
     <div class="grid grid-cols-3 gap-8">
         {%- for blog in collections.blogs | reverse -%}
             {% if (loop.index <= 5) %}
-            {{blog.url | log}}
                 <div style="{{ "grid-area:auto / auto / span 2 / span 2;" if loop.first }}">
                     {{
                     blogPost({
                         title: blog.data.title,
                         description: blog.data.description,
                         category: blog.data.tags[0],
-                        img: blog.data.cover,
+                        img: blog.data.cover.image,
                         url: blog.url
                     }) 
                     }}

@@ -128,3 +128,12 @@ details[open] summary~* {
         transform: translateY(0);
     }
 }
+
+#blog-index {
+    margin: 0;
+    padding: 0;
+    list-style-type: "- ";
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(107 114 128);
+}

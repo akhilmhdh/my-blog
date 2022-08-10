@@ -1,3 +1,9 @@
+{% from "components/icons.njk" import facebookIcon,linkedinIcon,twitterIcon,mailIcon %}
+
+{% set js %}
+  {% include "js/buildSocialMediaURL.js" %}
+{% endset %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +19,7 @@
     <header>
         {% include "partials/nav.njk" %}
     </header>
-    <main class="flex-grow w-full py-12">
+    <main class="flex-grow py-12">
         <section class=" flex flex-col items-center text-center mb-8">
             <div class="mb-8">
                 <h1 class="mb-2">
@@ -30,6 +36,23 @@
                 </cite>
             </div>
         </section>
+        <div class="sticky top-48 float-left p-4">
+            {% blogIndex %}
+        </div>
+        <div class="shadow-md sticky top-48 float-right flex flex-col gap-4 p-4 border-cream rounded-md border">
+            <a  class="text-gray-600 hover:text-primary transition-all" id="share-twitter"  target="_blank" rel="noopener noreferrer">
+                    {{twitterIcon(32,32)}}
+            </a>
+             <a  id="share-linkedin" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary transition-all">
+                    {{linkedinIcon(32,32)}}
+            </a>
+             <a class="text-gray-600 hover:text-primary transition-all" id="share-mail"  target="_blank" rel="noopener noreferrer">
+                    {{mailIcon(32,32)}}
+            </a>
+             <a class="text-gray-600 hover:text-primary transition-all" id="share-facebook"  target="_blank" rel="noopener noreferrer">
+                    {{facebookIcon(32,32)}}
+            </a>
+        </div>
         <section class="mx-auto w-full max-w-3xl leading-7">
             <div class="text-2xl leading-7 font-bold text-gray-500 mb-8">
                 {{description}}
@@ -38,6 +61,9 @@
         </section>
     </main>
     {% include "partials/footer.njk" %}
+    <script>
+        {{ js | jsmin | safe }}
+    </script>
 </body>
 
 </html>

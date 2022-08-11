@@ -1,7 +1,10 @@
 {% from "components/icons.njk" import facebookIcon,linkedinIcon,twitterIcon,mailIcon %}
 
-{% set js %}
+{% set buildSocialMediaURLJS %}
   {% include "js/buildSocialMediaURL.js" %}
+{% endset %}
+{% set readingProgressbarJS %}
+  {% include "js/readingProgressbar.js" %}
 {% endset %}
 
 <!DOCTYPE html>
@@ -15,12 +18,13 @@
     <title>{{ title }}</title>
 </head>
 
-<body class="h-screen m-0 px-4 pt-6 flex flex-col">
-    <header>
+<body class="m-0 flex flex-col">
+    <header class="sticky top-0 bg-white pt-4 shadow-sm shadow-cream">
         {% include "partials/nav.njk" %}
     </header>
-    <main class="flex-grow py-12">
-        <section class=" flex flex-col items-center text-center mb-8">
+    <div id="progress-bar" class="sticky" style="top:68px;"></div>
+    <main class="flex-grow p-4 pt-0">
+        <section class="flex flex-col items-center text-center my-8">
             <div class="mb-8">
                 <h1 class="mb-2">
                     {{title}}
@@ -62,7 +66,10 @@
     </main>
     {% include "partials/footer.njk" %}
     <script>
-        {{ js | jsmin | safe }}
+        {{ buildSocialMediaURLJS | jsmin | safe }}
+    </script>
+    <script>
+        {{ readingProgressbarJS | jsmin | safe }}
     </script>
 </body>
 

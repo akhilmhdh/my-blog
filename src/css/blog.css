@@ -137,3 +137,11 @@ details[open] summary~* {
     font-weight: bold;
     color: rgb(107 114 128);
 }
+
+#progress-bar {
+    --scrollAmount: 0%;
+
+    background:rgba(255, 128, 30, 0.5);
+    width: var(--scrollAmount);
+    height: 2px;
+}

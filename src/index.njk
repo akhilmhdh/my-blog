@@ -6,33 +6,33 @@ layout: layouts/base.njk
 {% from "components/blogPost.njk" import blogPost %}
 
 <section class="bg-cream -mx-4">
-    <div class="w-full pt-12 p-4 flex flex-col gap-8 mx-auto max-w-5xl animate-fade-in-down">
-        <div class="flex gap-6 items-center">
-            <div>
+    <div class="w-full pt-12 p-4 flex flex-col items-center lg:items-start mx-auto max-w-5xl animate-fade-in-down">
+        <div class="flex flex-col md:flex-row items-center justify-center lg:justify-start mb-8">
+            <div class="mr-0 mb-6 md:mr-6 md:mb-0">
                 <img src="https://github.com/akhilmhdh.png" alt="avatar" class="w-32 h-32 rounded-md" /> 
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col items-center md:items-start">
                 <h1 class="mb-5">
                     Hi, I'm Akhil
                 </h1>
-                <div class="flex gap-4">
-                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                <div class="flex">
+                    <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
                         {{ghIcon(28,28)}}
                     </a>
-                     <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                     <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
                         {{mailIcon(28,28)}}
                     </a>
-                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                    <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
                         {{linkedinIcon(28,28)}}
                     </a>
-                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                    <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
                         {{twitterIcon(28,28)}}
                     </a>
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-4 max-w-xl  bg-secondary rounded-lg p-8 shadow-md">
-            <p>
+        <div class="flex flex-col max-w-xl  bg-secondary rounded-lg p-8 shadow-md">
+            <p class="mb-4">
                 I'm a software engineer at Red Hat, who loves to solve problems and build solutions.
             </p>
             <p>
@@ -44,19 +44,19 @@ layout: layouts/base.njk
     </div>
     <div>
         {# Credits for wave: https://getwaves.io/ #}
-        <svg class="wave" preserveAspectRatio="none" class="h-32 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,170.7C480,192,600,192,720,176C840,160,960,128,1080,128C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" style="--darkreader-inline-fill: #fff;" data-darkreader-inline-fill=""></path></svg>
+        <svg class="wave h-32 w-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,170.7C480,192,600,192,720,176C840,160,960,128,1080,128C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" style="--darkreader-inline-fill: #fff;" data-darkreader-inline-fill=""></path></svg>
     </div>
 </section>
 <section class="w-full flex flex-col mb-12 mx-auto max-w-5xl">
-    <div class="flex justify-between items-center py-4 border-b border-grey-lighter mb-8">
-        <div>
+    <div class="flex flex-col md:flex-row justify-between items-center py-4 border-b border-grey-lighter mb-8">
+        <div class="mb-4 md:mb-0">
             <h3>
                 Most Recent Posts
             </h3>
         </div>
         <a href="/blogs" class="hover:text-primary transition-all">
-            <div class="flex items-center gap-2">
-                <div class="font-lato">
+            <div class="flex items-center">
+                <div class="text-sm md:text-base whitespace-nowrap font-lato md:mb-2">
                     All my blogs
                 </div>
                 <div>
@@ -67,8 +67,8 @@ layout: layouts/base.njk
     </div>
     <div class="grid grid-cols-3 gap-8">
         {%- for blog in collections.blogs | reverse -%}
-            {% if (loop.index <= 5) %}
-                <div style="{{ "grid-area:auto / auto / span 2 / span 2;" if loop.first }}">
+            {% if (loop.index <= 3) %}
+                <div class="col-span-3 {{ "md:[grid-area:auto_/_auto_/_span_2_/_span_2]" if loop.first else "md:col-span-1" }}">
                     {{
                     blogPost({
                         title: blog.data.title,

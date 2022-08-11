@@ -1,6 +1,6 @@
 {% from "components/icons.njk" import logo %}
 
-<nav class="flex justify-between items-center mx-auto max-w-5xl font-lato pt-2">
+<nav class="flex justify-between items-center mx-auto max-w-5xl font-lato p-2 pb-0">
     <div class="pb-4">
         <a href="/">
             {{
@@ -12,10 +12,10 @@
         <a href="/" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
             Home
         </a>
-        <a href="/blogs" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
+        <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
             Blogs
         </a>
-        <a href="/blogs" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
+        <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
             My Reads
         </a>
     </div>

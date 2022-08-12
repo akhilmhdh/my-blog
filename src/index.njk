@@ -5,7 +5,7 @@ layout: layouts/base.njk
 {% from "components/icons.njk" import ghIcon,linkedinIcon,twitterIcon,mailIcon, chevronRightIcon %}
 {% from "components/blogPost.njk" import blogPost %}
 
-<section class="bg-cream -mx-4">
+<section class="bg-cream dark:bg-zinc-800 -mx-4">
     <div class="w-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between items-center lg:items-end pt-12 p-4 mx-auto max-w-5xl animate-fade-in-down">
        <div class="flex flex-col items-center lg:items-start flex-shrink-0">
             <div class="flex flex-col md:flex-row items-center justify-center lg:justify-start mb-8">
@@ -32,12 +32,11 @@ layout: layouts/base.njk
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col max-w-xl  bg-secondary rounded-lg p-8 shadow-md">
+            <div class="flex flex-col max-w-xl  bg-secondary dark:text-zinc-900 rounded-lg p-8 shadow-md">
                 <p class="mb-4">
                     I'm a software engineer at Red Hat, who loves to solve problems and build solutions.
                 </p>
                 <p>
-                Right now on a journey to discover various aspects of myself and push myself into new domains.
                     Here I share
                     my thoughts and insights on things I have learned in technology, product building, and life.
                 </p>
@@ -49,7 +48,7 @@ layout: layouts/base.njk
     </div>
     <div>
         {# Credits for wave: https://getwaves.io/ #}
-        <svg class="wave h-32 w-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,170.7C480,192,600,192,720,176C840,160,960,128,1080,128C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" style="--darkreader-inline-fill: #fff;" data-darkreader-inline-fill=""></path></svg>
+        <svg class="wave h-32 w-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path class="fill-white dark:fill-zinc-900" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,170.7C480,192,600,192,720,176C840,160,960,128,1080,128C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" style="--darkreader-inline-fill: #fff;" data-darkreader-inline-fill=""></path></svg>
     </div>
 </section>
 <section class="w-full flex flex-col mb-12 mx-auto max-w-5xl">

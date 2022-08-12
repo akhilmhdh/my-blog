@@ -7,7 +7,7 @@
 @layer base {
     html {
         font-family: "Merriweather", serif;
-        @apply text-gray-700 scroll-smooth h-full
+        @apply text-zinc-900 dark:text-zinc-400 bg-white dark:bg-zinc-900 scroll-smooth h-full 
     }
 
     body {
@@ -20,6 +20,7 @@
     
     h1,h2,h3,h4,h5,h6 {
         font-family: "Lato", sans-serif;
+        @apply dark:text-zinc-300
     }
 
     h1 {
@@ -44,7 +45,19 @@
 
     h6 {
         @apply text-base font-bold md:text-lg
-    }   
+    }
+
+    th {
+        @apply bg-cream dark:bg-zinc-900
+    }
+
+    blockquote{
+        @apply bg-cream dark:bg-zinc-800
+    }
+
+    details {
+        @apply bg-cream dark:bg-zinc-900
+    }
 }
 
 @layer components {

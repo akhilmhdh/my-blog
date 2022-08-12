@@ -19,7 +19,7 @@
 </head>
 
 <body class="m-0 flex flex-col">
-    <header class="sticky top-0 bg-white pt-4 shadow-sm shadow-cream z-30">
+    <header class="sticky top-0 bg-white dark:bg-zinc-900 shadow-sm shadow-cream dark:shadow-slate-800 z-30">
         {% include "partials/nav.njk" %}
     </header>
     <div id="progress-bar" class="sticky" style="top:68px;"></div>
@@ -43,17 +43,17 @@
         <div class="sticky top-48 float-left p-4 hidden lg:block">
             {% blogIndex %}
         </div>
-        <div class="shadow-md bg-white sticky top-48 float-right hidden md:flex flex-col p-4 border-cream rounded-md border">
-            <a  class="text-gray-600 hover:text-primary transition-all share-twitter mb-4"   target="_blank" rel="noopener noreferrer">
+        <div class="shadow-md bg-white dark:bg-zinc-900 sticky top-48 float-right hidden md:flex flex-col p-4 border-cream dark:border-zinc-400 rounded-md border">
+            <a  class="text-zinc-400 hover:text-primary transition-all share-twitter mb-4"   target="_blank" rel="noopener noreferrer">
                     {{twitterIcon(32,32)}}
             </a>
-             <a  target="_blank" rel="noopener noreferrer" class="share-linkedin mb-4 text-gray-600 hover:text-primary transition-all">
+             <a  target="_blank" rel="noopener noreferrer" class="share-linkedin mb-4 text-zinc-400 hover:text-primary transition-all">
                     {{linkedinIcon(32,32)}}
             </a>
-             <a class="text-gray-600 hover:text-primary transition-all mb-4 share-mail" target="_blank" rel="noopener noreferrer">
+             <a class="text-zinc-400 hover:text-primary transition-all mb-4 share-mail" target="_blank" rel="noopener noreferrer">
                     {{mailIcon(32,32)}}
             </a>
-             <a class="text-gray-600 hover:text-primary transition-all share-facebook" target="_blank" rel="noopener noreferrer">
+             <a class="text-zinc-400 hover:text-primary transition-all share-facebook" target="_blank" rel="noopener noreferrer">
                     {{facebookIcon(32,32)}}
             </a>
         </div>

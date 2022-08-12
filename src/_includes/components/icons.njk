@@ -29,6 +29,22 @@
     </svg>   
 {% endmacro %}
 
+{% macro darkModeButton(width=32,height=32) %}
+  <svg width="{{width}}" height="{{height}}" viewBox="0 0 86 86"xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="transition-all">
+    <rect width="86" height="86" rx="9" class="fill-white dark:fill-zinc-900" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M58.7654 51.6932C57.5402 51.895 56.2823 51.9999 55 51.9999C42.2975 51.9999 32 41.7025 32 28.9999C32 28.9165 32.0004 28.8332 32.0013 28.75C27.7425 32.042 25 37.2007 25 42.9999C25 52.9411 33.0589 60.9999 43 60.9999C49.7884 60.9999 55.6991 57.2421 58.7654 51.6932Z" class="opacity-0 dark:opacity-100 transition-all duration-150" />
+    <circle cx="43" cy="43" r="18" class="opacity-100 dark:opacity-0 transition-all duration-150" />
+    <path d="M43 9L47.3301 21H38.6699L43 9Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M43 77L38.6699 65H47.3301L43 77Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M9 43L21 38.6699V47.3301L9 43Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M77 43L65 47.3301V38.6699L77 43Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M67.1341 18.6673L61.2758 30.0001L55.3892 23.6481L67.1341 18.6673Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M67.0662 66.6199L55.3683 61.5299L61.3138 55.233L67.0662 66.6199Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M18.3761 67.4916L24.3037 56.195L30.1513 62.583L18.3761 67.4916Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+    <path d="M18.5626 18.5083L30.0677 24.0204L23.8971 30.0968L18.5626 18.5083Z" class="opacity-100 dark:opacity-0 transition-all duration-500" />
+  </svg>
+{% endmacro %}
+
 {% macro logo(height=32) %}
 <svg height="{{height}}" viewBox="0 0 143 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4C0 1.79086 1.79086 0 4 0H24.5455C26.7546 0 28.5455 1.79086 28.5455 4V22.1667C28.5455 24.3758 26.7546 26.1667 24.5455 26.1667H4C1.79086 26.1667 0 24.3758 0 22.1667V4ZM2.61667 3.33031H4.0606V22.5828H2.61667V3.33031ZM9.83636 3.3303H4.06063V4.77423H9.83635V12.4752H4.06063V13.9191H9.83635V22.5828H11.2803V15.1946L17.056 22.5721V22.5828H17.0644L17.0767 22.5985L17.0967 22.5828H18.5L18.5 13.9191H24.2757L24.2757 22.5828H25.7196V3.33031H24.2757L24.2757 12.4752H18.5L18.5 3.33031H17.056L17.056 12.4752H11.2803L11.2803 13.3115V3.33031H9.83636V3.3303ZM12.1155 13.9191L17.056 20.2298L17.056 13.9191H12.1155Z" fill="#FF7E1E"/>

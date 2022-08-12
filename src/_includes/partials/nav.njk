@@ -1,22 +1,32 @@
-{% from "components/icons.njk" import logo %}
+{% from "components/icons.njk" import logo,darkModeButton %}
+
+{% set darkModeJS %}
+  {% include "js/darkMode.js" %}
+{% endset %}
 
 <nav class="flex justify-between items-center mx-auto max-w-5xl font-lato p-2 pt-6 pb-0">
-    <div class="pb-4">
-        <a href="/">
+    <div class="flex items-center">
+        <a href="/" class="mr-12 pb-4">
             {{
                 logo(28)
             }}
         </a>
-    </div>
-    <div class="flex gap-6 items-center">
-        <a href="/" class="border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
+        <a href="/" class="border-b-4 mr-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
             Home
         </a>
-        <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
+        <a href="/blogs" class="ml-4 mr-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
             Blogs
         </a>
         <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
             My Reads
         </a>
     </div>
+    <div class="flex items-center">
+        <button class="hover:text-primary relative bottom-2" id="dark-mode">
+            {{darkModeButton(36,36)}}
+        </button>
+    </div>
 </nav>
+<script>
+     {{ darkModeJS | jsmin | safe }}
+</script>

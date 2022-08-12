@@ -7,11 +7,11 @@
 @layer base {
     html {
         font-family: "Merriweather", serif;
-        @apply text-zinc-900 dark:text-zinc-400 bg-white dark:bg-zinc-900 scroll-smooth h-full 
+        @apply  scroll-smooth h-full 
     }
 
     body {
-        @apply min-h-full
+        @apply min-h-full text-zinc-900 dark:text-zinc-300 bg-white dark:bg-zinc-900
     }
 
     svg {
@@ -20,7 +20,7 @@
     
     h1,h2,h3,h4,h5,h6 {
         font-family: "Lato", sans-serif;
-        @apply dark:text-zinc-300
+        @apply dark:text-zinc-200
     }
 
     h1 {

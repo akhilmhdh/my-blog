@@ -1,0 +1,51 @@
+@keyframes twitch {
+    0% {
+        transform: translateY(-1px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateX(-2px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        transform: 1;
+    }
+}
+
+#developer-hand{
+    animation: twitch 2s ease-in-out alternate infinite;
+}
+
+#programming-line-1 {
+    animation: appear 750ms linear alternate infinite;
+}
+
+#programming-line-2 {
+    animation: appear 750ms 750ms linear alternate infinite;
+}
+
+#programming-line-3 {
+    animation: appear 750ms 1.4s linear alternate infinite;
+}
+
+#programming-line-4 {
+    animation: appear 750ms 2.1s linear alternate infinite;
+}
+
+#programming-line-5 {
+    animation: appear 750ms 2.8s linear alternate infinite;
+}

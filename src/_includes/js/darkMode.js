@@ -8,9 +8,8 @@ if (
   document.documentElement.classList.remove('dark');
 }
 
-const darkModeBtn = document.getElementById('dark-mode');
-// toggle dark mode in root html
-darkModeBtn.addEventListener('click', () => {
+const toggleDarkMode = () => {
+  // toggle dark mode in root html
   if (document.documentElement.classList.contains('dark')) {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('theme', 'light');
@@ -18,4 +17,4 @@ darkModeBtn.addEventListener('click', () => {
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
   }
-});
+};

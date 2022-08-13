@@ -1,7 +1,11 @@
-{% from "components/icons.njk" import logo,darkModeButton %}
+{% from "components/icons.njk" import logo,darkModeButton,menuIcon %}
 
 {% set darkModeJS %}
   {% include "js/darkMode.js" %}
+{% endset %}
+
+{% set mobileDrawerJS %}
+  {% include "js/mobileDrawer.js" %}
 {% endset %}
 
 <nav class="flex justify-between items-center mx-auto max-w-5xl font-lato p-2 pt-6 pb-0">
@@ -11,22 +15,46 @@
                 logo(28)
             }}
         </a>
-        <a href="/" class="border-b-4 mr-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
-            Home
-        </a>
-        <a href="/blogs" class="ml-4 mr-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
-            Blogs
-        </a>
-        <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
-            My Reads
-        </a>
+        <div class="hidden md:flex items-center">
+            <a href="/" class="border-b-4 mr-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
+                Home
+            </a>
+            <a href="/blogs" class="ml-4 mr-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
+                Blogs
+            </a>
+            <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
+                My Reads
+            </a>
+        </div>
     </div>
     <div class="flex items-center">
-        <button class="hover:text-primary relative bottom-2" id="dark-mode">
+        <button class="hover:text-primary relative bottom-2 transition-all md:hidden menu open" onclick="toggleMobileDrawer(this)">
+            {{menuIcon(28,28)}}
+        </button>
+        <button class="hover:text-primary relative bottom-2 transition-all hidden md:block" onclick="toggleDarkMode()">
             {{darkModeButton(36,36)}}
         </button>
     </div>
 </nav>
+<div class="absolute md:hidden w-screen h-screen font-lato bg-white dark:bg-zinc-900 dark:text-zinc-300 flex flex-col justify-center p-8 text-3xl text-bold mobile-drawer transition-all duration-300">
+     <a href="/" class="mb-8">
+        Home
+    </a>
+    <a href="/blogs" class="mb-8">
+        Blogs
+    </a>
+    <a href="/blogs" class="mb-8">
+        My Reads
+    </a>
+    <div>
+         <button class="transition-all hover:text-primary" onclick="toggleDarkMode()">
+            {{darkModeButton(64,64)}}
+        </button>
+    </div>
+</div>
 <script>
      {{ darkModeJS | jsmin | safe }}
+</script>
+<script>
+     {{ mobileDrawerJS | jsmin | safe }}
 </script>

@@ -22,6 +22,10 @@
         font-family: "Lato", sans-serif;
         @apply dark:text-zinc-200
     }
+    
+    button {
+        @apply outline-none
+    }
 
     h1 {
         @apply font-bold text-4xl md:text-5xl
@@ -90,4 +94,37 @@
         transform-origin: bottom;
         animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
+
+    .mobile-drawer {
+        transform: translateX(-100vw)
+    }
+    
+    .mobile-drawer.close {
+        transform: translateX(0);
+    }
+
+    .menu.open .line-1{
+        transform: translate(0, 0) rotateZ(0);
+    }
+
+    .menu.close .line-1{
+        transform: translate(-8px, 4px) rotateZ(45deg);
+    }
+
+    .menu.open .line-2{
+        opacity: 1;
+    }
+
+    .menu.close .line-2{
+        opacity: 0;
+    }
+ 
+
+   .menu.open .line-3 {
+       transform: translate(0, 0) rotateZ(0);
+   }
+
+   .menu.close .line-3 {
+       transform: translate(-8px, -4px) rotateZ(-45deg);
+   }
 }

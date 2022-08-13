@@ -29,6 +29,15 @@
     </svg>   
 {% endmacro %}
 
+{% macro menuIcon(width=32,height=32) %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="{{width}}" height="{{height}}" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="4" y1="6" x2="20" y2="6" class="line-1 transition-all origin-center duration-300"></line>
+      <line x1="4" y1="12" x2="20" y2="12" class="line-2 transition-all duration-300"></line>
+      <line x1="4" y1="18" x2="20" y2="18" class="line-3 transition-all origin-center duration-300"></line>
+    </svg>
+{% endmacro %}
+
 {% macro darkModeButton(width=32,height=32) %}
   <svg width="{{width}}" height="{{height}}" viewBox="0 0 86 86"xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="transition-all">
     <rect width="86" height="86" rx="9" class="fill-white dark:fill-zinc-900" />

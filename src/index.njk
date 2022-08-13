@@ -6,45 +6,38 @@ layout: layouts/base.njk
 {% from "components/blogPost.njk" import blogPost %}
 
 <section class="bg-cream dark:bg-gradient-to-t dark:from-zinc-800 dark:to-zinc-700 -mx-4">
-    <div class="w-full flex flex-col-reverse lg:flex-row justify-center lg:justify-between items-center lg:items-end pt-12 p-4 mx-auto max-w-5xl animate-fade-in-down">
-       <div class="flex flex-col items-center lg:items-start flex-shrink-0">
-            <div class="flex flex-col md:flex-row items-center justify-center lg:justify-start mb-8">
-                <div class="mr-0 mb-6 lg:mr-6 lg:mb-0 flex-shrink-0 hidden lg:block">
-                    <img src="https://github.com/akhilmhdh.png" alt="avatar" class="w-32 h-32 rounded-md" /> 
+    <div class="w-full flex flex-col-reverse md:flex-row justify-center lg:justify-start items-center lg:items-end pt-12 p-4 mx-auto max-w-5xl animate-fade-in-down">
+            <div class="h-96 flex-grow mb-4 lg:mb-0">
+                {% include "partials/developer.njk" %}
+            </div>
+            <div class="flex flex-col items-center md:items-end justify-center lg:justify-start mb-8">
+                <div class="flex-shrink-0 hidden md:block mb-2">
+                    <img src="https://github.com/akhilmhdh.png" alt="avatar" class="w-20 h-20 rounded-full" /> 
                 </div>
-                <div class="flex flex-col items-center lg:items-start">
-                    <h1 class="mb-5">
-                        Hi, I'm Akhil
-                    </h1>
-                    <div class="flex">
-                        <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
-                            {{ghIcon(28,28)}}
-                        </a>
-                        <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
-                            {{mailIcon(28,28)}}
-                        </a>
-                        <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
-                            {{linkedinIcon(28,28)}}
-                        </a>
-                        <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
-                            {{twitterIcon(28,28)}}
-                        </a>
-                    </div>
+                <h1 class="mb-2">
+                    Hi, I'm Akhil
+                </h1>
+                <h5 class="mb-4">
+                    Software Engineer At Red Hat
+                </h5>
+                <p class="font-lato font-bold opacity-60 text-center md:text-right">
+                    "Sharing my thoughts on technology, </br> product building, <br/> and life"
+                </p>
+                <div class="flex mt-4">
+                    <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
+                        {{ghIcon(28,28)}}
+                    </a>
+                    <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
+                        {{mailIcon(28,28)}}
+                    </a>
+                    <a href="/" class="hover:text-primary transition-all mr-4"  target="_blank" rel="noopener noreferrer">
+                        {{linkedinIcon(28,28)}}
+                    </a>
+                    <a href="/" class="hover:text-primary transition-all"  target="_blank" rel="noopener noreferrer">
+                        {{twitterIcon(28,28)}}
+                    </a>
                 </div>
             </div>
-            <div class="flex flex-col max-w-xl  bg-secondary dark:text-zinc-900 rounded-lg p-8 shadow-md">
-                <p class="mb-4">
-                    I'm a software engineer at Red Hat, who loves to solve problems and build solutions.
-                </p>
-                <p>
-                    Here I share
-                    my thoughts and insights on things I have learned in technology, product building, and life.
-                </p>
-            </div>
-        </div>
-        <div class="h-[360px] mb-4 lg:mb-0">
-            {% include "partials/developer.njk" %}
-        </div>
     </div>
     <div>
         {# Credits for wave: https://getwaves.io/ #}

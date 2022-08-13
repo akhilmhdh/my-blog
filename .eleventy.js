@@ -114,7 +114,7 @@ module.exports = function (eleventyConfig) {
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('formatDate', (dateObj) => {
-    return dayjs(dateObj).format('DD MMMM YYYY');
+    return dayjs(dateObj).format('DD MMM YYYY');
   });
 
   return {

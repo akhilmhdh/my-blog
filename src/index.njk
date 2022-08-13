@@ -62,17 +62,18 @@ layout: layouts/base.njk
             </div>
         </a>
     </div>
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-8">
         {%- for blog in collections.blogs | reverse -%}
             {% if (loop.index <= 3) %}
-                <div class="col-span-3 {{ "md:[grid-area:auto_/_auto_/_span_2_/_span_2]" if loop.first else "md:col-span-1" }}">
+                <div class="col-span-3 md:col-span-2 {{ "lg:[grid-area:auto_/_auto_/_span_2_/_span_2]" if loop.first else "lg:col-span-1" }}">
                     {{
                     blogPost({
                         title: blog.data.title,
                         description: blog.data.description,
                         category: blog.data.tags[0],
                         img: blog.data.cover.image,
-                        url: blog.url
+                        url: blog.url,
+                        date: blog.date
                     }) 
                     }}
                 </div>

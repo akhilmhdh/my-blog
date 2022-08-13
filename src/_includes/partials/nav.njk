@@ -1,4 +1,4 @@
-{% from "components/icons.njk" import logo,darkModeButton,menuIcon %}
+{% from "components/icons.njk" import logo,darkModeButton,menuIcon,rssIcon %}
 
 {% set darkModeJS %}
   {% include "js/darkMode.js" %}
@@ -16,13 +16,13 @@
             }}
         </a>
         <div class="hidden md:flex items-center">
-            <a href="/" class="border-b-4 mr-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/" }}">
+            <a href="/" class="border-b-4 mr-4 border-transparent hover:border-primary transition-all pb-4 {{ "text-primary border-primary" if page.url === "/" }}">
                 Home
             </a>
-            <a href="/blogs" class="ml-4 mr-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/blogs/" }}">
+            <a href="/blogs" class="ml-4 mr-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "text-primary border-primary" if page.url === "/blogs/" }}">
                 Blogs
             </a>
-            <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "border-primary" if page.url === "/reads" }}">
+            <a href="/blogs" class="ml-4 border-b-4 border-transparent hover:border-primary transition-all pb-4 {{ "text-primary border-primary" if page.url === "/reads" }}">
                 My Reads
             </a>
         </div>
@@ -31,9 +31,12 @@
         <button class="hover:text-primary relative bottom-2 transition-all md:hidden menu open" onclick="toggleMobileDrawer(this)">
             {{menuIcon(28,28)}}
         </button>
-        <button class="hover:text-primary relative bottom-2 transition-all hidden md:block" onclick="toggleDarkMode()">
+        <button class="hover:text-primary relative bottom-2 transition-all hidden md:block mr-4" onclick="toggleDarkMode()">
             {{darkModeButton(36,36)}}
         </button>
+        <a href="/rss.xml" class="hover:text-primary relative bottom-2 transition-all hidden md:block"  target="_blank" rel="noopener noreferrer">
+            {{rssIcon(21,21)}}
+        </a>
     </div>
 </nav>
 <div class="absolute md:hidden w-screen h-screen font-lato bg-white dark:bg-zinc-900 dark:text-zinc-300 flex flex-col justify-center p-8 text-3xl text-bold mobile-drawer transition-all duration-300">
@@ -46,10 +49,13 @@
     <a href="/blogs" class="mb-8">
         My Reads
     </a>
-    <div>
+    <div class="flex items-center">
          <button class="transition-all hover:text-primary" onclick="toggleDarkMode()">
             {{darkModeButton(64,64)}}
         </button>
+        <a href="/rss.xml" class="hover:text-primary transition-all ml-4"  target="_blank" rel="noopener noreferrer">
+            {{rssIcon(36,36)}}
+        </a>
     </div>
 </div>
 <script>

@@ -13,14 +13,15 @@ layout: base
     </div>
     <div class="grid grid-cols-6 gap-6">
         {%- for blog in collections.blogs | reverse -%}
-            <div class="col-span-6 md:col-span-2">
+            <div class="col-span-6 md:col-span-3 lg:col-span-2">
                 {{
                     blogPost({
                         title: blog.data.title,
                         description: blog.data.description,
                         category: blog.data.tags[0],
                         img: blog.data.cover.image,
-                        url: blog.url
+                        url: blog.url,
+                        date: blog.date
                     }) 
                 }}
             </div>

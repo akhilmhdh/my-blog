@@ -20,6 +20,13 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob('./src/blogs/**/*.md');
   });
 
+  eleventyConfig.addNunjucksGlobal('blogTags', function (collection) {
+    console.log(Object.keys(collection));
+    return Object.keys(collection)
+      .sort()
+      .filter((key) => key !== 'all' && key !== 'blogs');
+  });
+
   eleventyConfig.addLayoutAlias('blog', 'layouts/blog.njk');
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
 

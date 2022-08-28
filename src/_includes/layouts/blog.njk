@@ -29,9 +29,9 @@
                 <h1 class="mb-2">
                     {{title}}
                 </h1>
-                <span class="text-xs uppercase font-bold opacity-50 font-lato">
+                <a class="text-xs uppercase font-bold opacity-50 font-lato hover:text-primary transition-all" href="/tags/{{tags[0]}}">
                     {{tags[0]}}
-                </span>
+                </a>
             </div>
             <div class="w-full max-w-4xl">
                 <img src="{{cover.image}}" alt="cover" class="w-full rounded-md mb-4 object-cover"/>
@@ -62,6 +62,11 @@
                 {{description}}
             </div>
             {{ content | safe }}
+        </section>
+        <section class="mx-auto w-full max-w-3xl">
+            <div class="my-12">
+                {% include "partials/blogTags.njk" %}
+            </div>
         </section>
         <section class="my-8 block md:hidden">
             <div class="text-center">

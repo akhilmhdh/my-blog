@@ -21,7 +21,6 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addNunjucksGlobal('blogTags', function (collection) {
-    console.log(Object.keys(collection));
     return Object.keys(collection)
       .sort()
       .filter((key) => key !== 'all' && key !== 'blogs');

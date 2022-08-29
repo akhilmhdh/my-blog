@@ -5,7 +5,7 @@ layout: base
 
 {% from "components/blogPost.njk" import blogPost %}
 
-<section class="w-full flex flex-col mb-4 mx-auto max-w-5xl">
+<section class="w-full flex flex-col my-4 mx-auto max-w-5xl">
     <div class="py-4 border-b border-grey-lighter mb-8">
         <h3>
             My Blogs
@@ -26,9 +26,8 @@ layout: base
                 }}
             </div>
         {%- endfor -%}
-        </div>
     </div>
-    <div class="mt-12">
+    <div class="mt-6 mb-12 py-6 border-t border-gray-200">
         {% include "partials/blogTags.njk" %}
     </div>
 </section>

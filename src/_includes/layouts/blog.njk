@@ -63,8 +63,38 @@
             </div>
             {{ content | safe }}
         </section>
+        <section class="mx-auto w-full max-w-3xl mt-12">
+            <div class="flex justify-between items-center">
+                {%- if collections.blogs %}
+                    {%- set nextPost = collections.blogs | getNextCollectionItem(page) %}
+                    {%- set previousPost = collections.blogs | getPreviousCollectionItem(page) %}
+                    {%- if nextPost or previousPost %}
+                        <div>
+                            {%- if previousPost %}
+                                <a href="{{ previousPost.url | url }}">
+                                    <div class="bg-cream p-4 pr-8 rounded-md font-lato dark:bg-zinc-800 hover:text-primary transition-all">
+                                        <div class="text-xs font-medium text-gray-400 pb-1"> Previous Post </div>
+                                        {{ previousPost.data.title }}
+                                    </div>
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div>
+                            {%- if nextPost %}
+                                <a href="{{ nextPost.url | url }}">
+                                        <div class="bg-cream p-4 pl-8 rounded-md font-lato dark:bg-zinc-800 transition-all hover:text-primary">
+                                            <div class="text-xs font-medium text-gray-400 pb-1 text-right"> Next Post </div>
+                                            {{ nextPost.data.title }}
+                                        </div>
+                                </a>
+                            {% endif %}
+                        </div>
+                    {%- endif %}
+                {%- endif %}
+            </div>
+        </section>
         <section class="mx-auto w-full max-w-3xl">
-            <div class="my-12">
+            <div class="mt-6 mb-12 py-6 border-t border-gray-200">
                 {% include "partials/blogTags.njk" %}
             </div>
         </section>

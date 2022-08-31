@@ -4,11 +4,11 @@
   "description": "akhilmhdh blog",
   "main": "index.js",
   "scripts": {
-    "start": "pnpm prestart && npm-run-all -p dev:*",
+    "start": "npm run prestart && npm-run-all -p dev:*",
     "prestart": "rimraf ./dist",
     "dev:server": "eleventy --serve",
     "dev:tw": "npx tailwindcss -i src/css/global.css -o dist/css/global.css --watch",
-    "build": "eleventy && pnpm run tw:build",
+    "build": "eleventy && npm run tw:build",
     "tw:build": "npx tailwindcss -i src/css/global.css -o dist/css/global.css --minify"
   },
   "keywords": [],

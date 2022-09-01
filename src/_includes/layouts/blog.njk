@@ -72,7 +72,7 @@
                         <div>
                             {%- if previousPost %}
                                 <a href="{{ previousPost.url | url }}">
-                                    <div class="bg-cream p-4 pr-8 rounded-md font-lato dark:bg-zinc-800 hover:text-primary transition-all">
+                                    <div class="bg-cream text-lg p-4 pr-8 rounded-md font-lato dark:bg-zinc-800 hover:text-primary transition-all">
                                         <div class="text-xs font-medium text-gray-400 pb-1"> Previous Post </div>
                                         {{ previousPost.data.title }}
                                     </div>
@@ -82,7 +82,7 @@
                         <div>
                             {%- if nextPost %}
                                 <a href="{{ nextPost.url | url }}">
-                                        <div class="bg-cream p-4 pl-8 rounded-md font-lato dark:bg-zinc-800 transition-all hover:text-primary">
+                                        <div class="bg-cream text-lg p-4 pl-8 rounded-md font-lato dark:bg-zinc-800 transition-all hover:text-primary">
                                             <div class="text-xs font-medium text-gray-400 pb-1 text-right"> Next Post </div>
                                             {{ nextPost.data.title }}
                                         </div>

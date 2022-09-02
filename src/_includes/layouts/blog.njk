@@ -32,6 +32,11 @@
                 <a class="text-xs uppercase font-bold opacity-50 font-lato hover:text-primary transition-all" href="/tags/{{tags[0]}}">
                     {{tags[0]}}
                 </a>
+                {% if updatedOn %}
+                    <div class="text-xs font-lato mt-4 opacity-50">
+                        Last updated on {{updatedOn | formatDate}}
+                    </div>
+                {% endif %}
             </div>
             <div class="w-full max-w-4xl">
                 <img src="{{cover.image}}" alt="cover" class="w-full rounded-md mb-4 object-cover"/>

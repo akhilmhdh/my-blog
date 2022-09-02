@@ -1,5 +1,5 @@
 window.onload = () => {
-  document.addEventListener('scroll', () => {
+  document.addEventListener('scroll', function () {
     const docElem = document.documentElement;
     const docBody = document.body;
     const scrollTop = docElem['scrollTop'] || docBody['scrollTop'];

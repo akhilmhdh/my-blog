@@ -13,6 +13,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets');
   eleventyConfig.addPassthroughCopy('./src/css/blog.css');
   eleventyConfig.addPassthroughCopy('./src/css/animations.css');
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/medium-zoom/dist/medium-zoom.min.js':
+      '/js/medium-zoom.min.js',
+  });
 
   eleventyConfig.addWatchTarget('./src/css/');
 

@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.medium-zoom-overlay{
+    @apply bg-opacity-50 bg-zinc-400 dark:bg-zinc-900 !important
+}
+
 @layer base {
     html {
         font-family: "Merriweather", serif;

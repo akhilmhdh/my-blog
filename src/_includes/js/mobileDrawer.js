@@ -1,4 +1,4 @@
-const toggleMobileDrawer = (toggleBtn) => {
+function toggleMobileDrawer(toggleBtn) {
   const drawer = document.querySelector('.mobile-drawer');
   if (drawer.classList.contains('close')) {
     drawer.classList.remove('close');
@@ -9,4 +9,4 @@ const toggleMobileDrawer = (toggleBtn) => {
     toggleBtn.classList.remove('open');
     toggleBtn.classList.add('close');
   }
-};
+}

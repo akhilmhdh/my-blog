@@ -8,7 +8,7 @@ if (
   document.documentElement.classList.remove('dark');
 }
 
-const toggleDarkMode = () => {
+function toggleDarkMode() {
   // toggle dark mode in root html
   if (document.documentElement.classList.contains('dark')) {
     document.documentElement.classList.remove('dark');
@@ -17,4 +17,4 @@ const toggleDarkMode = () => {
     document.documentElement.classList.add('dark');
     localStorage.setItem('theme', 'dark');
   }
-};
+}

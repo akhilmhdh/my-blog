@@ -11,11 +11,15 @@ specifiers:
   dayjs: ^1.11.4
   markdown-it: ^13.0.1
   markdown-it-anchor: ^8.6.4
+  medium-zoom: ^1.0.6
   npm-run-all: ^4.1.5
   postcss: ^8.4.14
   rimraf: ^3.0.2
   tailwindcss: ^3.1.8
   terser: ^5.14.2
+
+dependencies:
+  medium-zoom: 1.0.6
 
 devDependencies:
   '@11ty/eleventy': 1.0.1
@@ -1808,6 +1812,10 @@ packages:
   /mdurl/1.0.1:
     resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
     dev: true
+
+  /medium-zoom/1.0.6:
+    resolution: {integrity: sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg==}
+    dev: false
 
   /memorystream/0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}

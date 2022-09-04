@@ -142,3 +142,12 @@ details[open] summary~* {
     width: var(--scrollAmount);
     height: 2.5px;
 }
+
+.anchor-highlight a {
+   box-shadow: rgba(255, 128, 30, 0.6) 0px -1.6px 0px 0px inset;
+   transition: all .25s ease;
+}
+
+.anchor-highlight a:hover {
+   box-shadow: rgba(255, 128, 30, 0.6) 0px -5.984px 0px 0px inset;
+}

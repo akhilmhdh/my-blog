@@ -1,19 +1,20 @@
 ---
-title: Effective React
-description: Answering some of the most common questions when you work on React.
+title: Testing UI
+description: This is template on blog's css
 date: Created
 updatedOn: 09/2/2022
 cover:
   image: https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F1i5P2Iq4omhSnzajCWjsxd%2F9f613f5b011bcc6ebd0ddfc0198d7849%2Fthe-supportive-7.png?ixlib=gatsbySourceUrl-2.0.2&auto=format%2C%20compress&w=814&h=458&s=42204952307dfede0c5d040d83943917
   caption: illustration by x
-tags: react
+layout: layouts/blog
+permalink: /blog-css/index.html
 ---
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
 
 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
 
-## Heading 2
+## Heading 2 :wave:
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
 

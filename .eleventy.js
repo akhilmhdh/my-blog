@@ -1,13 +1,15 @@
 const { minify } = require('terser');
 const CleanCSS = require('clean-css');
-const markdownIt = require('markdown-it');
 const dayjs = require('dayjs');
 const fs = require('fs');
+const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItEmoji = require('markdown-it-emoji');
+const markdownItAttrs = require('markdown-it-attrs');
+const markdownPrism = require('markdown-it-prism');
 
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+// const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 
 module.exports = function (eleventyConfig) {
@@ -35,7 +37,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
 
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
 
   function sentenceCase(sentence) {
@@ -91,6 +92,10 @@ module.exports = function (eleventyConfig) {
     html: true,
     linkify: true,
   })
+    .use(markdownItAttrs)
+    .use(markdownPrism, {
+      highlightInlineCode: true,
+    })
     .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.ariaHidden({
         placement: 'before',

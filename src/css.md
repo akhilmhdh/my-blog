@@ -48,6 +48,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 - Nam terga artibus
 - Care telum buxo quem videt alumno fa
 
+## Code block
+
+```python {data-prismjs-copy="Copy the JavaScript snippet!"}
+nums = [x for x in range(10)]
+```
+
 ## Table
 
 | Title   | Desc                                                              | Now way | Get lost | asdsadasd   |

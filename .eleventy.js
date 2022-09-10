@@ -14,6 +14,9 @@ const pluginNavigation = require('@11ty/eleventy-navigation');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/assets');
+  eleventyConfig.addPassthroughCopy({
+    './src/assets/favicon.ico': '/favicon.ico',
+  });
   eleventyConfig.addPassthroughCopy('./src/css/blog.css');
   eleventyConfig.addPassthroughCopy('./src/css/animations.css');
   eleventyConfig.addPassthroughCopy({

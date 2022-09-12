@@ -69,8 +69,8 @@
             </div>
             <div class="w-full max-w-4xl">
                 <img src="{{cover.image}}" alt="cover" class="w-full rounded-md mb-4 object-cover"/>
-                <cite class="text-sm italic text-gray-500">
-                    {{cover.caption}}
+                <cite class="text-sm italic text-gray-500 anchor-highlight">
+                    {{cover.caption | safe }}
                 </cite>
             </div>
         </section>

@@ -1,11 +1,11 @@
 ---
 title: Thinking Components
 description: What are components in a UI? Dumb Components? Why even bother about components?
-date: Created
-updatedOn: 09/4/2022
+date: 2022-09-12
+updatedOn: 09/12/2022
 cover:
-  image: https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F1i5P2Iq4omhSnzajCWjsxd%2F9f613f5b011bcc6ebd0ddfc0198d7849%2Fthe-supportive-7.png?ixlib=gatsbySourceUrl-2.0.2&auto=format%2C%20compress&w=814&h=458&s=42204952307dfede0c5d040d83943917
-  caption: illustration by x
+  image: /assets/blogs/thinking-components/cover.jpg
+  caption: Photo by <a href="https://unsplash.com/@glencarrie?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Glen Carrie</a> on <a href="https://unsplash.com/s/photos/lego-block?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 tags: frontend
 ---
 
@@ -17,7 +17,7 @@ Let's take a step back for all the developers taking their baby steps in web dev
 
 ## Types of components
 
-UI components are like building blocks or elements for your user interface. You can think of them as Legos. HTML specs give you foundational pieces like input elements that you can extend, customize or group to build more interactive ones.
+UI components are like building blocks or elements for your user interface. You can think of them as Legos. [HTML specs](https://html.spec.whatwg.org) give you foundational pieces like input elements that you can extend, customize or group to build more interactive ones.
 
 Why bother about these in your development?
 
@@ -31,6 +31,8 @@ Well, you should, because thinking from the component's perspective helps you
 
 Some of the most typical components in a webpage are:
 
+![various types of components](/assets/blogs/thinking-components/components.png)
+
 1. Dumb Components
 2. Containers
 3. Layout
@@ -43,7 +45,7 @@ It means the component doesn't care about where the data is or how data comes in
 
 So dumb components or pure components are like pure functions. For a given input, it always renders expectedly. It only cares about the UI. Everyone who is in front-end development must be familiar with UI Frameworks. A UI Framework is just a collection of a lot of these dummies.
 
-Dum components tend to be easy to test and reusable. They make your development process a breeze. A project should always start with the implementation of these types. Never put business logic into it. It makes them unpredictable and complex to reuse.
+Dumb components tend to be easy to test and reusable. They make your development process a breeze. A project should always start with the implementation of these types. Never put business logic into it. It makes them unpredictable and complex to reuse.
 
 Some of the dumb components in a design start with foundational elements like
 
@@ -110,9 +112,10 @@ Some of the things happening on a page are:
 - Passing data from one component to another
 
 > If your dumb/container components are required only on a page, keep them close to that page. Avoid putting it in your project's shared folder for UI.
+>
 > It will cause two problems.
 >
-> 1. Too many components in the shared folder
+> 1. Too many components in the shared folder causes a nightmare to manage.
 > 2. Harder to find page-specific components
 >    You can always put it back in a shared folder if you want to use it on multiple pages.
 
@@ -136,11 +139,13 @@ Some of the dumb components are
 
 Here are some tips to help you split components.
 
+- The most important thing to consider before implementing any component is **how it gets used**. It will help you remove unnecessary dependencies.
+- Follow KIS principle: **Keep It Simple**
 - Identify all typical dumb components like buttons, input elements, sliders, etc. If you want an easy reference, refer to any UI framework.
-- Keep pages inside a page folder separately. Why, if you put everything in one component's folder, traversing and discoverability will be hard. For new developers, it will be a lot easier for them to get started as they can see the starting of each page in our project.
+- Keep pages separately.
+- Follow [Co-Location.](https://kentcdodds.com/blog/colocation)
 - When you are confused about whether a component needs to be in the global components, keep it as a separate file near your page first. It can be moved to the global component's directory when another page needs it.
 - The same principle is used for building containers. When you feel you are copy-pasting the same components and logic again, that's your clue.
 - An application can have more than one layout. But try to keep it as minimum as possible.
-- When building dumb components, think of possible instances it's used. Avoid any extra dependency.
 
 A possible scenario is when a project uses a form handling library. Even the form dependencies get abstracted into the form's dumb components. The issue with this approach is now your components are not free to use. They depend on a library. Consider when you need to use it without the library, which ends up as another element. It's better to avoid this kind of dependencies when building dumb ones. Keep them dumb.

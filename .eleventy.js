@@ -86,7 +86,7 @@ module.exports = function (eleventyConfig) {
     return `<ul id="blog-index">${blogIndexArr
       .map(
         ({ title, slug }) =>
-          `<li class="hover:text-primary transition-all"><a href="#${slug}">${title}</a></li>`
+          `<li class="hover:text-primary transition-all mb-4"><a href="#${slug}">${title}</a></li>`
       )
       .join('\n')}</ul>`;
   });

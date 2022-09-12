@@ -83,6 +83,11 @@ h5 {
     quotes: "\201C""\201D""\2018""\2019";
 }
 
+.content blockquote p:not(:last-child)::after, .content blockquote p:not(:first-child)::before{
+    content: "\a";
+    white-space: pre;
+}
+
 .content blockquote:before {
     color: #FF7E1E;
     content: open-quote;
